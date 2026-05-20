@@ -3,40 +3,34 @@ body {
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 12px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #4fa3ff;
-    margin-top: 30px;
-    font-size: 32px;
+    margin-bottom: 12px;
 }
 
 #login, #chat {
-    width: 92%;
-    margin: 30px auto;
-    padding: 20px;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 18px;
     background: #111;
     border: 1px solid #222;
-    border-radius: 12px;
+    border-radius: 10px;
     box-sizing: border-box;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 24px;
 }
 
 input, button {
     width: 100%;
-    padding: 18px;
-    margin-top: 14px;
+    padding: 16px;
+    margin-top: 12px;
     background: #1a1a1a;
     border: 1px solid #333;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 18px;
     box-sizing: border-box;
 }
@@ -59,7 +53,7 @@ button:active {
     padding: 12px;
     margin-top: 12px;
     background: #0f0f0f;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .msg {
