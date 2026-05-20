@@ -1,1 +1,18 @@
+#chat {
+    display: none;
+    width: 94%;
+    margin: 20px auto;
+    padding: 22px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 14px;
+}
+
+#messages {
+    height: 60vh;
+    overflow-y: auto;
+    background: #0f0f0f;
+    padding: 12px;
+    border-radius: 10px;
+}
 
