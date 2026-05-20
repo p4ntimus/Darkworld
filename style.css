@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: #0a0a0a;
     color: #e0e0e0;
@@ -26,18 +30,17 @@ h1, h2 {
 input, button {
     width: 100%;
     padding: 16px;
-    margin-top: 12px;
+    margin-top: 14px;
     background: #1a1a1a;
     border: 1px solid #333;
     color: #fff;
-    border-radius: 8px;
-    font-size: 18px;
-    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 button {
     background: #4fa3ff;
-    border: none;
+    border: 1px solid #4fa3ff; /* gleiche Border wie Input */
     color: #000;
     font-weight: bold;
 }
