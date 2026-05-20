@@ -1,1 +1,16 @@
+#login {
+    width: 94%;
+    margin: 20px auto;
+    padding: 22px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 14px;
+}
+
+#login input, #login button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 12px;
+    border-radius: 10px;
+}
 
