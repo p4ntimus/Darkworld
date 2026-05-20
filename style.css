@@ -3,35 +3,41 @@ body {
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 10px;
+    padding: 0;
 }
 
-h1, h2 {
+h1 {
     text-align: center;
     color: #4fa3ff;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size: 32px;
 }
 
 #login, #chat {
-    width: 100%;
-    max-width: 420px;
-    margin: 20px auto;
-    padding: 15px;
+    width: 92%;
+    margin: 30px auto;
+    padding: 20px;
     background: #111;
     border: 1px solid #222;
-    border-radius: 8px;
+    border-radius: 12px;
     box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
 }
 
 input, button {
     width: 100%;
-    padding: 14px;
-    margin-top: 10px;
+    padding: 18px;
+    margin-top: 14px;
     background: #1a1a1a;
     border: 1px solid #333;
     color: #fff;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 18px;
     box-sizing: border-box;
 }
 
@@ -43,25 +49,25 @@ button {
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 
 #messages {
-    height: 55vh;
+    height: 60vh;
     overflow-y: auto;
     border: 1px solid #333;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 12px;
+    margin-top: 12px;
     background: #0f0f0f;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .msg {
-    margin-bottom: 12px;
-    padding: 8px;
+    margin-bottom: 14px;
+    padding: 10px;
     background: #1a1a1a;
-    border-left: 3px solid #4fa3ff;
-    border-radius: 4px;
+    border-left: 4px solid #4fa3ff;
+    border-radius: 6px;
 }
 
 .name {
