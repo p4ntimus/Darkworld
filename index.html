@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>DarkWorld</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #login, #chat {
+            max-width: 400px;
+            margin: auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+        }
+        #messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #333;
+            padding: 10px;
+            margin-top: 10px;
+            background: #111;
+        }
+        .msg {
+            margin-bottom: 8px;
+        }
+        .name {
+            color: #4fa3ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DarkWorld</h1>
+
+<div id="login">
+    <h2>Login</h2>
+    <input id="name" placeholder="Name eingeben">
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="chat" style="display:none;">
+    <h2>Chat</h2>
+    <div id="messages"></div>
+    <input id="text" placeholder="Nachricht...">
+    <button onclick="sendMessage()">Senden</button>
+</div>
+
+<script>
+const API = "https://darkworld.infinityfreeapp.com/server.php";
+
+let username = "";
+
+function login() {
+    username = document.getElementById("name").value;
+
+    let form = new FormData();
+    form.append("name", username);
+
+    fetch(API + "?action=login", { method: "POST", body: form })
+        .then(r => r.json())
+        .then(data => {
+            if (data.error) {
+                register();
+            } else {
+                startChat();
+            }
+        });
+}
+
+function register() {
+    let form = new FormData();
+    form.append("name", username);
+
+    fetch(API + "?action=register", { method: "POST", body: form })
+        .then(r => r.json())
+        .then(() => startChat());
+}
+
+function startChat() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("chat").style.display = "block";
+    loadMessages();
+    setInterval(loadMessages, 2000);
+}
+
+function sendMessage() {
+    let text = document.getElementById("text").value;
+
+    let form = new FormData();
+    form.append("name", username);
+    form.append("text", text);
+
+    fetch(API + "?action=send", { method: "POST", body: form });
+    document.getElementById("text").value = "";
+}
+
+function loadMessages() {
+    fetch(API + "?action=messages")
+        .then(r => r.json())
+        .then(msgs => {
+            let box = document.getElementById("messages");
+            box.innerHTML = "";
+            msgs.forEach(m => {
+                box.innerHTML += `<div class="msg"><span class="name">${m.name}:</span> ${m.text}</div>`;
+            });
+            box.scrollTop = box.scrollHeight;
+        });
+}
+</script>
+
+</body>
+</html>
+
