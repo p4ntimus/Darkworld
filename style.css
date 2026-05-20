@@ -3,66 +3,68 @@ body {
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 h1, h2 {
     text-align: center;
     color: #4fa3ff;
+    margin-bottom: 10px;
 }
 
 #login, #chat {
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 15px;
     background: #111;
     border: 1px solid #222;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 input, button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-top: 10px;
     background: #1a1a1a;
     border: 1px solid #333;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 button {
     background: #4fa3ff;
     border: none;
-    cursor: pointer;
     color: #000;
     font-weight: bold;
 }
 
-button:hover {
-    background: #6bb4ff;
+button:active {
+    transform: scale(0.98);
 }
 
 #messages {
-    height: 300px;
+    height: 55vh;
     overflow-y: auto;
     border: 1px solid #333;
     padding: 10px;
     margin-top: 10px;
     background: #0f0f0f;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .msg {
-    margin-bottom: 10px;
-    padding: 6px;
+    margin-bottom: 12px;
+    padding: 8px;
     background: #1a1a1a;
     border-left: 3px solid #4fa3ff;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .name {
     color: #4fa3ff;
     font-weight: bold;
 }
-
