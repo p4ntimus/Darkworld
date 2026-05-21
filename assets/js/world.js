@@ -12,3 +12,24 @@ async function loadPlayer() {
 }
 
 loadPlayer();
+
+function renderHUD(player) {
+    const hud = document.getElementById("hud");
+
+    hud.innerHTML = `
+        <div class="player-info">
+            ${player.name} – Level ${player.level}
+        </div>
+
+        <div class="hp-bar">
+            <div class="hp-fill" style="width:${player.hp}%"></div>
+        </div>
+
+        <div class="gold">
+            <img src="assets/img/gold.png">
+            ${player.gold}
+        </div>
+    `;
+}
+
+renderHUD(playerData);
