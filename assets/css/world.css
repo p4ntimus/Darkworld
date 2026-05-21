@@ -19,3 +19,56 @@ body.world {
         background-position: center;
     }
 }
+
+/* HUD Container */
+#hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+/* Spielername + Level */
+#hud .player-info {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* HP-Bar */
+.hp-bar {
+    width: 150px;
+    height: 18px;
+    background: #440000;
+    border: 2px solid #770000;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #aa0000);
+    width: 100%;
+}
+
+/* Gold */
+#hud .gold {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+#hud .gold img {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+}
