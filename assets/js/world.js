@@ -16,6 +16,8 @@ loadPlayer();
 function renderHUD(player) {
     const hud = document.getElementById("hud");
 
+    const xpPercent = Math.min(100, (player.xp / player.xpNeeded) * 100);
+
     hud.innerHTML = `
         <div class="player-info">
             ${player.name} – Level ${player.level}
@@ -25,11 +27,16 @@ function renderHUD(player) {
             <div class="hp-fill" style="width:${player.hp}%"></div>
         </div>
 
+        <div class="xp-bar">
+            <div class="xp-fill" style="width:${xpPercent}%"></div>
+        </div>
+
         <div class="gold">
             <img src="assets/img/gold.png">
             ${player.gold}
         </div>
     `;
 }
+
 
 renderHUD(playerData);
