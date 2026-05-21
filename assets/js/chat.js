@@ -1,40 +1,16 @@
-import { api } from './api.js';
+import { rtdb } from "./firebase.js";
+import { ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 
-export function initChat() {
-    const sendBtn = document.getElementById("sendBtn");
-    const msgBox = document.getElementById("messages");
+const chatRef = ref(rtdb, "chat");
 
-    if (!sendBtn) return;
-
-    sendBtn.addEventListener("click", sendMessage);
-
-    setInterval(loadMessages, 2000);
-}
-
-async function sendMessage() {
-    const name = localStorage.getItem("dw_user");
-    const text = document.getElementById("text").value.trim();
-
-    if (!text) return;
-
-    await api("send", { name, text });
-    document.getElementById("text").value = "";
-}
-
-async function loadMessages() {
-    const msgBox = document.getElementById("messages");
-    const msgs = await api("messages");
-
-    msgBox.innerHTML = "";
-
-    msgs.forEach(m => {
-        msgBox.innerHTML += `
-            <div class="msg">
-                <span class="name">${m.name}:</span> ${m.text}
-            </div>
-        `;
+export function sendMessage(user, text) {
+    push(chatRef, {
+        user,
+        text,
+        time: Date.now()
     });
-
-    msgBox.scrollTop = msgBox.scrollHeight;
 }
 
+export function listenChat(callback) {
+    onChildAdded(chatRef, (snap) => callback(snap.val()));
+}
