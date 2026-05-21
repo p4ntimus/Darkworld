@@ -1,0 +1,21 @@
+body.world {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body.world {
+        background-image: url('../img/dorf-mobile.png');
+        background-position: center top;
+    }
+}
+
+/* Desktop */
+@media (min-width: 601px) {
+    body.world {
+        background-image: url('../img/dorf-desktop.png');
+        background-position: center;
+    }
+}
