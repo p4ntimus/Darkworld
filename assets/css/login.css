@@ -104,3 +104,42 @@ h1 {
         font-size: 24px;
     }
 }
+
+/* MOBILE OPTIMIERUNG */
+@media (max-width: 600px) {
+
+    /* Hintergrund besser für Hochformat */
+    body.login-screen {
+        background-position: center top;
+        background-size: cover;
+    }
+
+    /* DarkWorld Titel kleiner & näher am Rand */
+    h1 {
+        font-size: 22px;
+        top: 10px;
+        left: 10px;
+    }
+
+    /* Login-Box kompakter */
+    #login {
+        padding: 22px;
+        max-width: 92%;
+        margin-top: 40px;
+        border-radius: 12px;
+    }
+
+    #login h2 {
+        font-size: 22px;
+    }
+
+    #login input {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    #login button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
