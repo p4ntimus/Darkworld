@@ -1,18 +1,66 @@
 #chat {
-    display: none;
-    width: 94%;
-    margin: 20px auto;
+    width: 90%;
+    max-width: 420px;
+    margin: 40px auto;
     padding: 22px;
     background: #111;
     border: 1px solid #222;
     border-radius: 14px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+}
+
+#chat h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #4fa3ff;
 }
 
 #messages {
-    height: 60vh;
+    height: 55vh;
     overflow-y: auto;
     background: #0f0f0f;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #222;
 }
 
+.msg {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    border-left: 3px solid #4fa3ff;
+}
+
+.name {
+    color: #4fa3ff;
+    font-weight: bold;
+}
+
+#text {
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+#sendBtn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #4fa3ff;
+    color: #000;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#sendBtn:hover {
+    background: #6bb4ff;
+}
