@@ -2,18 +2,24 @@
 body.login-screen {
     margin: 0;
     padding: 0;
-    background: #000 url('../img/login.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #e0e0e0;
-    font-family: 'Cinzel', serif;
 
-    /* Zentriert Login-Box */
+    background-image: url('../img/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    /* Desktop: Parallax, Mobile ignoriert es automatisch */
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    min-height: 100vh;
+    color: #e0e0e0;
+    font-family: 'Cinzel', serif;
 }
 
 /* DarkWorld Titel oben links */
