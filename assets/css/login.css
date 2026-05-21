@@ -1,18 +1,45 @@
-
-
 #login {
-    width: 94%;
-    margin: 20px auto;
-    padding: 22px;
+    width: 90%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 28px;
     background: #111;
     border: 1px solid #222;
     border-radius: 14px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
 }
 
-#login input, #login button {
+#login h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #4fa3ff;
+}
+
+#login input {
     width: 100%;
-    padding: 16px;
+    padding: 14px;
     margin-top: 12px;
     border-radius: 10px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
 }
 
+#login button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 16px;
+    border-radius: 10px;
+    border: none;
+    background: #4fa3ff;
+    color: #000;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#login button:hover {
+    background: #6bb4ff;
+}
