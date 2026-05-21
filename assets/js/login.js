@@ -1,26 +1,24 @@
-import { api } from './api.js';
+import { auth, db } from "./firebase.js";
+import { signInAnonymously } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-export function initLogin() {
-    const loginBox = document.getElementById("login");
-    const chatBox = document.getElementById("chat");
-    const btn = document.getElementById("loginBtn");
+document.getElementById("loginBtn").addEventListener("click", async () => {
+    const username = document.getElementById("username").value.trim();
+    if (!username) return alert("Bitte Namen eingeben!");
 
-    if (!btn) return;
+    const userCred = await signInAnonymously(auth);
+    const uid = userCred.user.uid;
 
-    btn.addEventListener("click", async () => {
-        const name = document.getElementById("name").value.trim();
-        if (!name) return;
-
-        let result = await api("login", { name });
-
-        if (result.error) {
-            await api("register", { name });
-        }
-
-        loginBox.style.display = "none";
-        chatBox.style.display = "block";
-
-        localStorage.setItem("dw_user", name);
+    await setDoc(doc(db, "players", uid), {
+        name: username,
+        level: 1,
+        hp: 100,
+        gold: 0,
+        created: Date.now()
     });
-}
 
+    localStorage.setItem("uid", uid);
+    localStorage.setItem("username", username);
+
+    window.location.href = "world.html";
+});
